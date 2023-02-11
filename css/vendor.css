@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,regular,600,italic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Italiana:regular&display=swap");
+@import url(./vendor/bootstrap/bootstrap.min.css);
+@import url(./vendor/splide.min.css);
+@import url(./vendor/splide-extension-video.min.css);
+@import url(./vendor/aos.min.css);
+@import url(./variables.css);

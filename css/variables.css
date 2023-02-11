@@ -1,0 +1,16 @@
+:root {
+  /* General */
+  --main-bg: #ffffff;
+  --dark: #1f1f1f;
+  --accent: #69ae96;
+  --hover: #3B7A64;
+  --dark-trans: #8f8f8f;
+  --nav-color: #a2a2a2;
+  --add-color:#e7e7e7;
+  --bg-1: #f5f9fa;
+  --bg-2: #f5fcf8;
+  --bg-3: #fcf8f5;
+  --bg-4: #e9e9e9;
+
+  --body-line-height: 150%;
+}
