@@ -1,3 +1,10 @@
+(function() {
+  'use strict';
+
+/*
+========== Loader =========================
+*/
+
 // loader page
 let wrapload = document.querySelector(".loading");
 
@@ -18,6 +25,9 @@ window.addEventListener("load", () => {
   loadder();
 });
 
+/*
+========== NavBar =========================
+*/
 window.addEventListener("DOMContentLoaded", () => {
   // Navbar shrink function
   var navbarShrink = function () {
@@ -47,6 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   // Add bg-mob class to navbar
   const navButton = document.querySelector(".navbar-toggler");
   const header = document.querySelector("#mainNav");
@@ -55,8 +66,8 @@ window.addEventListener("DOMContentLoaded", () => {
     header.classList.toggle("bg-mob");
   });
 
-  /* Hide the collapsible responsive navigation bar when you click on a link (except dropdown menus)
-   */
+  // Hide the collapsible responsive navigation bar 
+  // when you click on a link (except dropdown menus)
   const hum = document.querySelector(".ham");
   document
     .querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle)")
@@ -69,7 +80,63 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// testimonials slider
+/*
+========== Top Menu ===========================
+** Used for the open/closed submenu on depth > 2 
+** Bootstrap Navwalker 
+*/
+document.addEventListener("DOMContentLoaded", function(){
+        
+
+  // Prevent closing from click inside dropdown
+document.querySelectorAll('.dropdown-menu').forEach(function(element){
+  element.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+});
+
+
+// make it as accordion for smaller screens
+if (window.innerWidth < 992) {
+
+  // close all inner dropdowns when parent is closed
+  document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+    everydropdown.addEventListener('hidden.bs.dropdown', function () {
+      // after dropdown is hidden, then find all submenus
+        this.querySelectorAll('.submenu-dropdown').forEach(function(everysubmenu){
+          // hide every submenu as well
+          everysubmenu.style.display = 'none';
+        });
+    });
+  });
+  
+  document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+    element.addEventListener('click', function (e) {
+
+        let nextEl = this.nextElementSibling;
+        if(nextEl && nextEl.classList.contains('submenu-dropdown')) {	
+          // prevent opening link if link needs to open dropdown
+          e.preventDefault();
+          console.log(nextEl);
+          if(nextEl.style.display == 'block'){
+            nextEl.style.display = 'none';
+          } else {
+            nextEl.style.display = 'block';
+          }
+
+        }
+    });
+  });
+}
+// end if innerWidth
+
+}); 
+// DOMContentLoaded  end
+
+/*
+====== Testimonials slider  =======================
+*/
+
 const splide = new Splide(".splide", {
   type: "loop",
   gap: "2.5rem",
@@ -96,6 +163,8 @@ splide.on("mounted move", function () {
 });
 
 splide.mount(window.splide.Extensions);
-// end testimonials slider
+
 
 AOS.init();
+
+})();
