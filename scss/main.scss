@@ -471,6 +471,7 @@ LOADER =================
   }
   //   Slider
   & .splide-container {
+    position: relative;
     // progress bar
     & .my-slider-progress-container {
       margin: auto;
@@ -491,21 +492,6 @@ LOADER =================
           height: 2px;
           transition: width 400ms ease;
           width: 0;
-        }
-        & .number {
-          position: absolute;
-          font-size: 16px;
-          font-weight: 600;
-          width: 1.25rem;
-          height: 1.25rem;
-          bottom: 0;
-          top: -0.75rem;
-          &:first-child {
-            left: 0;
-          }
-          &:last-child {
-            right: 0;
-          }
         }
       }
     }
@@ -612,6 +598,39 @@ LOADER =================
               margin-top: 0.3125rem;
             }
           }
+        }
+      }
+    }
+    & .splide__pagination__page {
+      background: transparent;
+      font-size: 16px;
+      font-weight: 600;
+      height: auto;
+      width: auto;
+      &.is-active {
+        background: transparent;
+        transform: scale(1);
+      }
+    }
+    & .splide__pagination--number {
+      width: 100%;
+      max-width: 73.125rem;
+      transform: scale(1);
+      font-size: 16px;
+      font-weight: 600;
+      margin: auto;
+      bottom: 0;
+      & li {
+        position: absolute;
+        &:not(:first-child):not(:last-child)  {
+          opacity: 0;
+          visibility: hidden;
+         }
+         &:first-child {
+          left: 0;
+        }
+        &:last-child {
+          right: 0;
         }
       }
     }
@@ -988,6 +1007,9 @@ MEDIA  =================
           }
         }
       }
+      & .splide__pagination--number {
+        width: 95%;
+      }
     }
   }
   .contact-container {
@@ -1140,6 +1162,9 @@ MEDIA  =================
           }
         }
       }
+      & .splide__pagination--number {
+        width: 94%;
+      }
     }
   }
 }
@@ -1231,6 +1256,9 @@ MEDIA  =================
             }
           }
         }
+      }
+      & .splide__pagination--number {
+        width: 92%;
       }
     }
   }
