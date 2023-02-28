@@ -1,4 +1,4 @@
-##### HTML test template - Fullstack/Web developer (middle)
+### Fullstack/Web developer (middle)
 
 #### Общие Требования
 

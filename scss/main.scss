@@ -20,6 +20,9 @@ HELPERS =================
   width: 100%;
   height: 100%;
 }
+:focus-visible {
+  outline: none;
+}
 .px-60 {
   padding-left: 3.75rem;
   padding-right: 3.75rem;
